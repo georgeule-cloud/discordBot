@@ -8,7 +8,6 @@ const regeExPlayToasty = new RegExp(/;play/);
 const regeExPokemonToasty = new RegExp(/;pokemon/);
 const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 bot.on("ready", () => {
-// console.log("UU AA! Bananas!!!");
   bot.user.setActivity("YEET! Work in Progress", { type: "CUSTOM_STATUS" });
 
 });
@@ -16,11 +15,10 @@ bot.on("message", async (message: Message) => {
   if (message.channel.type == "dm") {
     try {
       message.channel.send(
-        // `¿Usted es tonto no? \n ¿¿¿No tenés amigos??? \n Andá cagá wacho.`
+        
         `No aceptamos mensajes por acá, gracias...`
       );
     } catch (error) {
-  // console.warn("Gg = \n" + error);
     }
   }
   let testGroovy = regeExPlayGroovy.test(message.content);
@@ -41,7 +39,6 @@ bot.on("message", async (message: Message) => {
     !testToastSong &&
     message.channel.id == "535279674440417290"
   ) {
-// console.log("Return on Music Channel");
     return;
   }
   if (
@@ -51,7 +48,6 @@ bot.on("message", async (message: Message) => {
     !testToastPokemon &&
     message.channel.id == "539148807049445397"
   ) {
-    // console.log("Return on Pokemon Channel");
     return;
   }
   if (
@@ -76,9 +72,7 @@ bot.on("message", async (message: Message) => {
 
   try {
   if ( (testGroovy || testToastSong) == true) {
-    // console.log(testGroovy + " " + testToastSong);
       if (message.channel.id != "535279674440417290" ) {
-        // console.log("Test Song True");
         
         message.delete();
         const member = message.member.user;
@@ -99,7 +93,6 @@ bot.on("message", async (message: Message) => {
   }
   return;
 }}catch (error) {
-  // console.warn("Gg = \n" + error);
 }
 try {
   if (testToastPokemon) {    
@@ -123,7 +116,6 @@ try {
       }
       return;
   }} catch (error) {
-    // console.warn("Gg = \n" + error);
   }
   try {
         if (message.channel.id != "693606873244500068" && message.content == "<@&536021611887722507>" && !message.author.bot) {
@@ -132,6 +124,5 @@ try {
         }
         return;
     }catch (error) {
-    // console.warn("Gg = \n" + error);
     }
 });
